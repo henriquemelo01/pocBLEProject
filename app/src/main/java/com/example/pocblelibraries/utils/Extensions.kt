@@ -4,12 +4,10 @@ import android.bluetooth.BluetoothGattCharacteristic
 import android.content.Context
 import android.content.pm.PackageManager
 import androidx.core.content.ContextCompat
+import com.example.pocblelibraries.R
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
-import java.lang.StringBuilder
-import java.security.PrivateKey
 
 fun Context.hasPermission(permissionType: String) =
     ContextCompat.checkSelfPermission(this, permissionType) == PackageManager.PERMISSION_GRANTED
@@ -48,6 +46,7 @@ fun LineChart.setupStyle() = this.apply {
     }
 
     setTouchEnabled(true)
+
     isDragEnabled = true
 
     description = null
@@ -55,11 +54,12 @@ fun LineChart.setupStyle() = this.apply {
     enableScroll()
 }
 
-fun LineDataSet.setupStyle() = this.apply {
+fun LineDataSet.setupStyle(context: Context) = this.apply {
     setDrawValues(false)
     lineWidth = 3f
     mode = LineDataSet.Mode.CUBIC_BEZIER
     isHighlightEnabled = true
     setDrawHighlightIndicators(false)
     setDrawCircles(false)
+    color = ContextCompat.getColor(context, R.color.green)
 }
