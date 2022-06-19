@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.lisawray.groupie:groupie-viewbinding:2.9.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/910f60fa675f017a3bdd5261ae8b6266/transformed/groupie-viewbinding-2.9.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/910f60fa675f017a3bdd5261ae8b6266/transformed/groupie-viewbinding-2.9.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/910f60fa675f017a3bdd5261ae8b6266/transformed/groupie-viewbinding-2.9.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.lisawray.groupie/groupie-viewbinding/2.9.0/e37b0dd0ff45bcc6794cb001d81727f301d77e68/groupie-viewbinding-2.9.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.lisawray.groupie/groupie-viewbinding/2.9.0/c464e98d3d15ace85c57e32d4ec2bc332832f054/groupie-viewbinding-2.9.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
