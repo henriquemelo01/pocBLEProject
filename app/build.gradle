@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -63,4 +64,13 @@ dependencies {
 
     def mp_chart_version = "3.1.0"
     implementation "com.github.PhilJay:MPAndroidChart:$mp_chart_version"
+
+    // Koin for Android
+    def koin_version = "3.1.5"
+    def koin_core_extensions_versions = "3.0.2"
+    def koin_android_extensions_version = "2.2.3"
+    implementation "io.insert-koin:koin-core:$koin_version"
+    implementation "io.insert-koin:koin-core-ext:$koin_core_extensions_versions"
+    implementation "io.insert-koin:koin-android:$koin_version"
+//    implementation "io.insert-koin:koin-androidx-ext:$koin_android_extensions_version"
 }

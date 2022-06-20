@@ -1,4 +1,4 @@
-package com.example.pocblelibraries
+package com.example.pocblelibraries.bluetooth
 
 import androidx.lifecycle.ViewModel
 import com.github.mikephil.charting.data.Entry

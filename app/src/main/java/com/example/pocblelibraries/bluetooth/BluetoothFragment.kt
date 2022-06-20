@@ -1,4 +1,4 @@
-package com.example.pocblelibraries
+package com.example.pocblelibraries.bluetooth
 
 import android.Manifest
 import android.app.AlertDialog

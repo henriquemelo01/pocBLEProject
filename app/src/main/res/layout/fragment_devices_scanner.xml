@@ -3,136 +3,168 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:padding="24dp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvSearchBleDevices"
+    <com.example.pocblelibraries.ui.CustomToolbar
+        android:id="@+id/ctDevicesScannerFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
+        app:hasRightIcon="true"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="Procurar dispositivos"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textAlignment="center"/>
+        app:title="Bluetooth Fragment"
+        app:titleColor="@color/white"
+        app:leftIconColor="@color/white"
+        app:rightIconColor="@color/white"
+        app:toolbarBackgroundColor="@color/purple_500" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btScanBleDevices"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        app:layout_constraintTop_toBottomOf="@id/tvSearchBleDevices"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:padding="16dp"
-        android:text="Scan"
-        android:background="@color/black"
-        android:textColor="@color/white"/>
+        app:layout_constraintTop_toBottomOf="@id/ctDevicesScannerFragment">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvFoundedBleDevices"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btScanBleDevices"
-        android:text="Founded Ble Devices"
-        android:layout_marginTop="16dp"
-        android:textSize="16sp"
-        android:textColor="@color/black"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvFoundedBleDevicesList"
-        android:layout_width="0dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvFoundedBleDevices"
-        android:layout_marginTop="16dp"
-        tools:listitem="@layout/item_founded_device"
-        tools:itemCount="2"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSearchBleDevices"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Procurar dispositivos"
+                android:layout_marginTop="16dp"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginStart="16dp"/>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
-        android:id="@+id/clPeripheralFoundedContainer"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        app:layout_constraintTop_toBottomOf="@id/rvFoundedBleDevicesList"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="visible"
-        tools:visibility="visible"
-        android:layout_marginTop="16dp">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btScanBleDevices"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tvSearchBleDevices"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:padding="16dp"
+                android:text="Scan"
+                android:background="@color/black"
+                android:textColor="@color/white"/>
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvConnectedPeripheral"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="Dispositivo conectado: ESP-32"
-            android:textSize="16sp"
-            tools:visibility="visible"
-            android:textColor="@color/black"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFoundedBleDevices"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btScanBleDevices"
+                android:text="Founded Ble Devices"
+                android:layout_marginTop="16dp"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvPeripheralData"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tvConnectedPeripheral"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="Valor lido: 54"
-            android:visibility="visible"
-            tools:visibility="visible"
-            android:layout_marginTop="8dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFoundedBleDevicesList"
+                android:layout_width="0dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvFoundedBleDevices"
+                android:layout_marginTop="16dp"
+                tools:listitem="@layout/item_founded_device"
+                tools:itemCount="2"/>
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvVelocityCharacteristicData"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tvPeripheralData"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="Velocidade: 0.75"
-            android:visibility="visible"
-            tools:visibility="visible"
-            android:layout_marginTop="8dp"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:id="@+id/clPeripheralFoundedContainer"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintTop_toBottomOf="@id/rvFoundedBleDevicesList"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="visible"
+                tools:visibility="visible"
+                android:layout_marginTop="16dp">
 
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/lcVelocityData"
-            android:layout_width="0dp"
-            android:layout_height="250dp"
-            app:layout_constraintTop_toBottomOf="@id/tvVelocityCharacteristicData"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:visibility="visible"
-            android:visibility="gone"
-            android:layout_marginTop="16dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvConnectedPeripheral"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="Dispositivo conectado: ESP-32"
+                    android:textSize="16sp"
+                    tools:visibility="visible"
+                    android:textColor="@color/black"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btRemoveConnection"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/lcVelocityData"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp"
-            android:padding="16dp"
-            android:text="Remover Conexão"
-            android:visibility="gone"
-            tools:visibility="visible"
-            android:background="@color/black"
-            android:textColor="@color/white"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPeripheralData"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/tvConnectedPeripheral"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="Valor lido: 54"
+                    android:visibility="visible"
+                    tools:visibility="visible"
+                    android:layout_marginTop="8dp"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVelocityCharacteristicData"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/tvPeripheralData"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="Velocidade: 0.75"
+                    android:visibility="visible"
+                    tools:visibility="visible"
+                    android:layout_marginTop="8dp"/>
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lcVelocityData"
+                    android:layout_width="0dp"
+                    android:layout_height="250dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvVelocityCharacteristicData"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:visibility="visible"
+                    android:visibility="gone"
+                    android:layout_marginTop="16dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btRemoveConnection"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/lcVelocityData"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:padding="16dp"
+                    android:text="Remover Conexão"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:background="@color/black"
+                    android:textColor="@color/white"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

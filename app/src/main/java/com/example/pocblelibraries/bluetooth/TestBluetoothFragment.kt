@@ -7,12 +7,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Handler
 import android.os.Looper
-import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.pocblelibraries.model.BleDeviceModel
 import com.welie.blessed.*
 
 abstract class TestBluetoothFragment : Fragment() {

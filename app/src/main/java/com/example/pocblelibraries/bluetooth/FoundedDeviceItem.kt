@@ -1,9 +1,7 @@
-package com.example.pocblelibraries
+package com.example.pocblelibraries.bluetooth
 
 import android.view.View
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import com.example.pocblelibraries.R
 import com.example.pocblelibraries.databinding.ItemFoundedDeviceBinding
 import com.example.pocblelibraries.model.BleDeviceModel
 import com.xwray.groupie.viewbinding.BindableItem

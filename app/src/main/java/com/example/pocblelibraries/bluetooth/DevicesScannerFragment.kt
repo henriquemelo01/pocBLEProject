@@ -1,4 +1,4 @@
-package com.example.pocblelibraries
+package com.example.pocblelibraries.bluetooth
 
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothGattCharacteristic
@@ -127,6 +127,14 @@ class DevicesScannerFragment : BluetoothFragment() {
                 central.cancelConnection(it)
                 binding.btRemoveConnection.visibility = View.GONE
             }
+        }
+
+        binding.ctDevicesScannerFragment.setLeftIconClickListener {
+            Toast.makeText(requireContext(), "Left Icon Click", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.ctDevicesScannerFragment.setRightIconClickListener {
+            Toast.makeText(requireContext(), "Right Icon Click", Toast.LENGTH_SHORT).show()
         }
     }
 

@@ -55,11 +55,17 @@ fun LineChart.setupStyle() = this.apply {
 }
 
 fun LineDataSet.setupStyle(context: Context) = this.apply {
-    setDrawValues(false)
-    lineWidth = 3f
     mode = LineDataSet.Mode.CUBIC_BEZIER
+
+    setDrawValues(false)
+
+    lineWidth = 3f
+
     isHighlightEnabled = true
+
     setDrawHighlightIndicators(false)
+
     setDrawCircles(false)
+
     color = ContextCompat.getColor(context, R.color.green)
 }
